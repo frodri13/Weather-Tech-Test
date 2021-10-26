@@ -14,7 +14,7 @@ it("should have London as a city name", function () {
   });
 });
 
-it("should have a temperature", function () {
+it("sshould return a number for the temperature", function () {
   return frisby.get(url).expect("jsonTypes", "main", {
     temp: Joi.number(),
   });

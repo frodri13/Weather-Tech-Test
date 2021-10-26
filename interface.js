@@ -2,10 +2,20 @@ let temperature = document.querySelector("#current-temperature");
 
 document.querySelector("#select-city").addEventListener("submit", (event) => {
   event.preventDefault();
-  const city = document.querySelector("#current-city").value;
+  const city = document.querySelector("#current-city").value.toLowerCase();
 
-  if (city === "London") {
+  if (city === "london") {
     displayWeather(2643743);
+  } else if (city === "paris") {
+    displayWeather(2988507);
+  } else if (city === "new york") {
+    displayWeather(5128581);
+  } else if (city === "delhi") {
+    displayWeather(2650225);
+  } else if (city === "tokyo") {
+    displayWeather(1850147);
+  } else {
+    alert("Chose a city between: London, Paris, New York, Delhi or Tokyo ");
   }
 });
 
