@@ -1,4 +1,8 @@
 let temperature = document.querySelector("#current-temperature");
+let humidity = document.querySelector("#current-humidity");
+let description = document.querySelector("#current-description");
+let minTemp = document.querySelector("#current-min-temp");
+let maxTemp = document.querySelector("#current-max-temp");
 
 document.querySelector("#select-city").addEventListener("submit", (event) => {
   event.preventDefault();
@@ -30,5 +34,9 @@ const displayWeather = (city) => {
     .then((data) => {
       console.log(data);
       temperature.innerText = data.main.temp;
+      humidity.innerText = data.main.humidity;
+      description.innerText = data.weather[0].description;
+      minTemp.innerText = data.main.temp_min;
+      maxTemp.innerText = data.main.temp_max;
     });
 };
